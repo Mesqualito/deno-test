@@ -1,6 +1,14 @@
-import {serve} from "https://deno.land/std/http/server.ts";
-import {green} from "https://raw.githubusercontent.com/denoland/deno/master/std/fmt/colors.ts";
-import capitalize from "https://unpkg.com/lodash-es@4.17.15/capitalize.js";
+{
+    "imports": {
+    "http/": "https://deno.land/std/http/",
+        "fmt/": "https://raw.githubusercontent.com/denoland/deno/master/std/fmt/",
+        "lodash/": "https://unpkg.com/lodash-es@4.17.15/"
+    }
+}
+
+import {serve} from "http/server.ts";
+import {green} from "fmt/colors.ts";
+import capitalize from "lodash/capitalize.js";
 
 const server = serve(":8000");
 
