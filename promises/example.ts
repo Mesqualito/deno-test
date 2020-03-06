@@ -1,7 +1,6 @@
 const filePromise: Promise<Deno.File> = Deno.open("dummyFile.txt");
 
-filePromise.then((file: Deno.File) => {
-    Deno.copy(Deno.stdout, file).then(() => {
-        file.close();
-    });
+filePromise.then(async (file: Deno.File) => {
+    await Deno.copy(Deno.stdout, file);
+    file.close();
 });
